@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+df=pd.read_csv('dataset/data.csv')
+
+col=['gender','company','school','job','location']
+
+df_job=df[col]
+print(df_job.shape)
+#筛选公司非空值
+df_job=df_job[pd.notnull(df_job['company'])]
+print(df_job.shape)
+#筛选学校非空值
+df_job=df_job[pd.notnull(df_job['school'])]
+print(df_job.shape)
+# df_job=df_job[pd.notnull(df_job['job'])]
+# print(df_job.shape)
+company_list=["腾讯",'阿里','百度','美团','京东','网易',
+              '阿里巴巴','饿了么','微软','谷歌','华为',
+              '小米','ebay','新浪','苏宁','搜狐','360'
+              ,'36氪','AcFun','Alibaba','Amazon','Apple'
+              ,'Google','亚马逊','京东商城','UC','滴滴','ctrip']
+for name,group in df_job.groupby('company'):
+    if name in company_list:
+        print(name,":",len(group))
+
+    # print(name)
+    # print(group)

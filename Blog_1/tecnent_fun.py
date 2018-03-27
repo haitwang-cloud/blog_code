@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-df=pd.read_csv('../dataset/data.csv')
+df=pd.read_csv('../dataset/dataset.csv')
 
 col=['gender','company','school','job','location']
 company_list=["腾讯",'百度','美团','京东','网易','DJI 大疆创新 ','Facebook','IBM','ZTE 中兴','亚马逊 (Amazon.com)',

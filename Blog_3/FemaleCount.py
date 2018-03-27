@@ -7,7 +7,7 @@ font = FontProperties(fname=r"c:\windows\fonts\simsun.ttc", size=12)
 sns.set_style('whitegrid',{'font.sans-serif':['simhei','Arial']})
 
 
-df=pd.read_csv('../dataset/dataBlog3_male.csv')
+df=pd.read_csv('../dataset/dataBlog3_female.csv')
 # print(df.info())
 #筛选地区
 city_list=[]
@@ -64,7 +64,7 @@ print(school_df)
 company_list=[]
 company_count=[]
 for name,group in df.groupby('company'):
-    if len(group)>100:
+    if len(group)>10:
         # print(name,len(group))
         company_list.append(name)
         company_count.append(len(group))

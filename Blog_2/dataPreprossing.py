@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-df=pd.read_csv('../dataset/data.csv')
+df=pd.read_csv('../dataset/dataset.csv')
 
 col=['follower','following','agree_num',
     'ask_num','answer_num','location','trade','school']
@@ -31,5 +31,5 @@ print(df_Blog2.shape)
 df_Blog2=df_Blog2[pd.notnull(df_Blog2['school'])]
 print(df_Blog2.shape)
 
-df_Blog2.to_csv('../dataset/dataBlog2.csv',header=col,index=False)
+df_Blog2.to_csv('../dataset/dataBlog2.csv',header=col,index=False,encoding='utf-8')
 print("data preprosessing ok!")

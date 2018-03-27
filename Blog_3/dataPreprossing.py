@@ -1,5 +1,5 @@
 import pandas as pd
-df=pd.read_csv('../dataset/data.csv')
+df=pd.read_csv('../dataset/dataset.csv')
 
 col=['gender','follower','ask_num','answer_num',
 'location','trade','school','company']
@@ -21,21 +21,29 @@ print(df_Blog3.shape)
 df_Blog3=df_Blog3[pd.notnull(df_Blog3['location'])]
 print(df_Blog3.shape)
 #筛选行业非空
+df_Blog3.replace('自由职业','',inplace=True)
+df_Blog3.replace('无','',inplace=True)
+df_Blog3.replace('互联网','',inplace=True)
+df_Blog3.replace('学生','',inplace=True)
+df_Blog3.replace('大学生','',inplace=True)
 df_Blog3=df_Blog3[pd.notnull(df_Blog3['trade'])]
 print(df_Blog3.shape)
+df_Blog3.replace('本科','',inplace=True)
+df_Blog3.replace('大学','',inplace=True)
+df_Blog3.replace('大学本科','',inplace=True)
 #筛选学校非空
 df_Blog3=df_Blog3[pd.notnull(df_Blog3['school'])]
 print(df_Blog3.shape)
 #筛选公司非空
 df_Blog3=df_Blog3[pd.notnull(df_Blog3['company'])]
 print(df_Blog3.shape)
-df_Blog3.to_csv('../dataset/dataBlog3.csv',header=col,index=False)
-print("data preprosessing ok!")
-# #筛选男性用户
-# df_Blog3_male=df_Blog3[df_Blog3['gender']==1]
-# print(df_Blog3_male[:5])
-# df_Blog3_male.to_csv('../dataset/dataBlog3_male.csv',header=col,index=False)
-# #筛选女性用户
-# df_Blog3_female=df_Blog3[df_Blog3['gender']==0]
-# print(df_Blog3_female[:5])
-# df_Blog3_female.to_csv('../dataset/dataBlog3_female.csv',header=col,index=False)
+df_Blog3.replace('深圳市','深圳',inplace=True)
+df_Blog3.replace('广州市','广州',inplace=True)
+
+
+#筛选男性用户
+df_Blog3_male=df_Blog3[df_Blog3['gender']==1]
+df_Blog3_male.to_csv('../dataset/dataBlog3_male.csv',header=col,index=False,encoding='utf-8')
+#筛选女性用户
+df_Blog3_female=df_Blog3[df_Blog3['gender']==0]
+df_Blog3_female.to_csv('../dataset/dataBlog3_female.csv',header=col,index=False,encoding='utf-8')

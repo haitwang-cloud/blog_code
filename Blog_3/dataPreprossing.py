@@ -40,7 +40,7 @@ print(df_Blog3.shape)
 df_Blog3.replace('深圳市','深圳',inplace=True)
 df_Blog3.replace('广州市','广州',inplace=True)
 
-
+df_Blog3.to_csv('../dataset/dataBlog3.csv',header=col,index=False,encoding='utf-8')
 #筛选男性用户
 df_Blog3_male=df_Blog3[df_Blog3['gender']==1]
 df_Blog3_male.to_csv('../dataset/dataBlog3_male.csv',header=col,index=False,encoding='utf-8')

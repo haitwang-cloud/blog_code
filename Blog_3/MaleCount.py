@@ -24,12 +24,12 @@ city_dict={
 city_df=pd.DataFrame(city_dict)
 city_df=city_df.sort_values('count',ascending=False)[:10]
 print(city_df)
-# f,ax=plt.subplots(figsize=(40,30))
-# sns.barplot(x='city',y='count',data=city_df)
-# ax.set_title('女性分布Top10城市',fontsize=30)
-# ax.tick_params(axis='x',labelsize=40)
-# ax.tick_params(axis='y',labelsize=40)
-# plt.show()
+f,ax=plt.subplots(figsize=(40,30))
+sns.barplot(x='city',y='count',data=city_df)
+ax.set_title('男性分布Top10城市',fontsize=30)
+ax.tick_params(axis='x',labelsize=30)
+ax.tick_params(axis='y',labelsize=30)
+plt.show()
 #筛选行业
 trade_list=[]
 trade_count=[]
@@ -45,6 +45,12 @@ trade_dict={
 trade_df=pd.DataFrame(trade_dict)
 trade_df=trade_df.sort_values('count',ascending=False)[:10]
 print(trade_df)
+f,ax=plt.subplots(figsize=(40,30))
+sns.barplot(x='trade',y='count',data=trade_df)
+ax.set_title('男性分布Top10行业',fontsize=30)
+ax.tick_params(axis='x',labelsize=30)
+ax.tick_params(axis='y',labelsize=30)
+plt.show()
 #筛选学校
 school_list=[]
 school_count=[]
@@ -60,6 +66,12 @@ school_dict={
 school_df=pd.DataFrame(school_dict)
 school_df=school_df.sort_values('count',ascending=False)[:10]
 print(school_df)
+f,ax=plt.subplots(figsize=(40,30))
+sns.barplot(x='school',y='count',data=school_df)
+ax.set_title('男性分布Top10学校',fontsize=30)
+ax.tick_params(axis='x',labelsize=20)
+ax.tick_params(axis='y',labelsize=30)
+plt.show()
 #筛选公司
 company_list=[]
 company_count=[]
@@ -75,4 +87,9 @@ company_dict={
 company_df=pd.DataFrame(company_dict)
 company_df=company_df.sort_values('count',ascending=False)[:10]
 print(company_df)
-
+f,ax=plt.subplots(figsize=(40,30))
+sns.barplot(x='company',y='count',data=company_df)
+ax.set_title('男性分布Top10公司',fontsize=30)
+ax.tick_params(axis='x',labelsize=20)
+ax.tick_params(axis='y',labelsize=30)
+plt.show()
